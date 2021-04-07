@@ -5,7 +5,8 @@ Resource  TAF/testCaseModules/keywords/common/commonKeywords.robot
 
 *** Variables ***
 ${supportNotificationsUrl}   ${URI_SCHEME}://${BASE_URL}:${SUPPORT_NOTIFICATION_PORT}
-${subscriptionUri}         /api/${API_VERSION}/subscription
+${api_version}       v2  # default value is v1, set "${api_version}  v2" in testsuite Variables section for v2 api
+${subscriptionUri}         /api/${api_version}/subscription
 ${LOG_FILE_PATH}     ${WORK_DIR}/TAF/testArtifacts/logs/supportNotificaionsSubscriptionAPI.log
 
 *** Keywords ***
@@ -15,7 +16,7 @@ Generate Subscriptions
     ${name_list}  Create List
     FOR  ${data}  IN  @{data_list}
         ${json}=  Create Dictionary  subscription=${data}
-        Set to dictionary  ${json}       apiVersion=${API_VERSION}
+        Set to dictionary  ${json}       apiVersion=${api_version}
         Append To List  ${subscription_list}  ${json}
         Append To List  ${name_list}  ${data}[name]
     END

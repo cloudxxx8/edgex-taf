@@ -53,7 +53,7 @@ Create interval action with interval "${interval_time}"s delete events for core-
     Should return status code "200"
 
 Get random command and skip write only data
-    @{data_type_skip_write_only}=  Get All Read Commands
+    @{data_type_skip_write_only}=  Skip write only commands
     ${random_command}=  Get random "commandName" from "${data_type_skip_write_only}"
     [Return]  ${random_command}
 

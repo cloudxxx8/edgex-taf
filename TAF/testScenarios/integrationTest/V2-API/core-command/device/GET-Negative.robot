@@ -11,6 +11,7 @@ Force Tags      Skipped
 *** Variables ***
 ${SUITE}          Core-Command GET Negative Testcases
 ${LOG_FILE_PATH}  ${WORK_DIR}/TAF/testArtifacts/logs/core-command-get-negative.log
+${api_version}    v2
 
 *** Test Cases ***
 ErrCommandGET001 - Query all DeviceCoreCommands with non-int value on offset

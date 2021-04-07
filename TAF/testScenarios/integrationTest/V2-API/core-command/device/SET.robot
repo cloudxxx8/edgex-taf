@@ -11,6 +11,7 @@ Force Tags      Skipped
 *** Variables ***
 ${SUITE}          Core-Command Set Testcases
 ${LOG_FILE_PATH}  ${WORK_DIR}/TAF/testArtifacts/logs/core-command-set.log
+${api_version}    v2
 
 *** Test Cases ***
 CommandSET001 - Set specified device write command
